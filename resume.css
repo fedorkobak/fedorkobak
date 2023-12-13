@@ -1,0 +1,22 @@
+.work-experience {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.work-experience th, .work-experience td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.work-experience th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.work-experience tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.work-experience tr:hover {
+    background-color: #ddd;
+}
