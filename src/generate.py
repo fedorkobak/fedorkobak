@@ -1,5 +1,5 @@
-import os
 import yaml
+import pdfkit
 import jinja2
 from pathlib import Path
 
@@ -20,5 +20,12 @@ for pos, instruction in instructions.items():
         "skills": (file_path/instruction["skills"]).read_text()
     }
 
-    res = template.render(res)
-    (out_path/(pos + ".html")).write_text(res)
+    res_html = template.render(res)
+    html_file = out_path/(pos + ".html")
+    pdf_file = out_path/(pos + ".pdf")
+
+    html_file.write_text(res_html)
+    pdfkit.from_string(
+        res_html, str(pdf_file),
+        options={"enable-local-file-access": ""}
+    )
