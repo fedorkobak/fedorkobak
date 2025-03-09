@@ -1,0 +1,12 @@
+ml_engineer:
+  position: Machine Learning Engineer
+  experience: ml_engineer/experience.html
+  skills: ml_engineer/skills.html
+ds:
+  position: Data Scientist
+  experience: data_scientist/experience.html
+  skills: data_scientist/skills.html
+developer:
+  position: Python developer
+  experience: python_developer/experience.html
+  skills: python_developer/skills.html
