@@ -1,11 +1,22 @@
 return {
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { 
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme "catppuccin"
+        end
+    },
     {
         'nvim-telescope/telescope.nvim',
         dependencies = {
             'nvim-lua/plenary.nvim',
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-        }
+        },
+        config = function()
+            local builtin = require('telescope.builtin')
+            vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+        end
     },
     {
         "nvim-neo-tree/neo-tree.nvim",
@@ -16,5 +27,8 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         lazy = false,
+        config = function()
+            vim.keymap.set('n', '<C-b>', ":Neotree filesystem reveal left<CR>", {})
+        end
     }
 }
