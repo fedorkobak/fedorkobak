@@ -36,23 +36,6 @@ return {
 		opts = {},
 	},
 	{
-		"nvimtools/none-ls.nvim",
-		config = function()
-			local null_ls = require("null-ls")
-
-			null_ls.setup({
-				sources = {
-					null_ls.builtins.formatting.stylua,
-					null_ls.builtins.completion.spell,
-					null_ls.builtins.diagnostics.mypy,
-					null_ls.builtins.formatting.yapf,
-					require("none-ls.diagnostics.eslint"),
-				},
-			})
-			vim.keymap.set("n", "<C-g>", vim.lsp.buf.format, {})
-		end,
-	},
-	{
 		"L3MON4D3/LuaSnip",
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
