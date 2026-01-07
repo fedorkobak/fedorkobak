@@ -4,6 +4,8 @@ This folder contains my neovim configuration.
 
 This file contains useful links and tips on configuration and usage.
 
+Check the [user docs](https://neovim.io/doc/user/) in the official neovim site.
+
 The **configuration file** is `~/.config/nvim/init.lua`.
 
 Some basic configuration options:
@@ -34,6 +36,16 @@ To change size of the split use:
 
 - `CTRL-w + "+/-"`: to increase/decrease the size of the current section horizontally.
 - `CTRL-w + "</>"`: to increase/decrease the size of the current section vertically.
+
+## LSP
+
+Neovim supports the lsp features check the [documentaion](https://neovim.io/doc/user/lsp.html).
+
+Some important commands:
+
+- [`vim.lsp.buf.type_definition()`](https://neovim.io/doc/user/lsp.html#vim.lsp.buf.type_definition()) jumps to the definition of the type of the object under cursor (`grt` default shortcut).
+- [`vim.lsp.buf.references()`](https://neovim.io/doc/user/lsp.html#vim.lsp.buf.references()) shows all the mentions of the symbol under cursor in the special window (`grr` default shortcut).
+- [`vim.diagnostics.open_float()`](https://neovim.io/doc/user/diagnostic.html#vim.diagnostic.open_float()) opens the show diagnostics in the floating window. This means that if lsp or formatter marked some problem you can get additional inforamation in the floating window.
 
 ## Plugins
 
