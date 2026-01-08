@@ -19,7 +19,7 @@ Some basic configuration options:
 
 - To open terminal use `:terminal` command.
 - To start typing enter the edit mode, as usualy using `i`.
-- To return to normal mode use `<C-/>,<C-n>` by default.
+- To return to normal mode use `<C-\>,<C-n>` by default.
 
 ## Splits
 
