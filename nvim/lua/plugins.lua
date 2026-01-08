@@ -31,29 +31,16 @@ return {
 			vim.keymap.set("n", "<C-b>", ":Neotree filesystem reveal left<CR>", {})
 		end,
 	},
-	{"L3MON4D3/LuaSnip",},
-	{"hrsh7th/nvim-cmp"},
     {
-        "hrsh7th/cmp-nvim-lsp",
+        "akinsho/toggleterm.nvim",
         config = function()
-            local cmp = require("cmp")
-
-            cmp.setup({
-              completion = {
-                autocomplete = { cmp.TriggerEvent.TextChanged },
-              },
-
-              mapping = cmp.mapping.preset.insert({
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),
-                ["<C-Space>"] = cmp.mapping.complete(),
-                ["<Tab>"] = cmp.mapping.select_next_item(),
-                ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-              }),
-
-              sources = {
-                { name = "nvim_lsp" },
-              },
-            })
+            require("toggleterm").setup{
+                open_mapping = [[<C-t>]],
+                direction = "horizontal",
+                size = 12,
+                insert_mappings = true,
+                terminal_mappings = true,
+            }
         end,
-    },
+    }
 }
