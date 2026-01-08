@@ -15,6 +15,12 @@ Some basic configuration options:
 - `vim.opt.shiftwidth = 4`: amount of spaces to move the selected lines with `CTRL+</>`.
 - `vim.opt.tabstop = 4`: amount of spaces to insert when the TAB is pressed in edit mode.
 
+**Terminal**
+
+- To open terminal use `:terminal` command.
+- To start typing enter the edit mode, as usualy using `i`.
+- To return to normal mode use `<C-/>,<C-n>` by default.
+
 ## Splits
 
 This section looks at how you can split window in nvim.
