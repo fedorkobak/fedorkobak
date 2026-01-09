@@ -42,5 +42,18 @@ return {
                 terminal_mappings = true,
             }
         end,
-    }
+    },
+    {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            vim.keymap.set(
+                "n",
+                "<C-g>",
+                function()
+                    require("gitsigns").preview_hunk()
+                end,
+                { desc = "Git preview hunk" }
+            )
+        end,
+    },
 }
