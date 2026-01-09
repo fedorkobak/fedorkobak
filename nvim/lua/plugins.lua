@@ -15,7 +15,10 @@ return {
 		},
 		config = function()
 			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+            local search = function()
+                builtin.find_files({ hidden = true })
+            end
+			vim.keymap.set("n", "<C-p>", search, {})
 		end,
 	},
 	{
