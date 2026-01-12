@@ -62,7 +62,7 @@ return {
                 "n",
                 "<C-g>",
                 function()
-                    require("gitsigns").preview_hunk()
+                    require("gitsigns").preview_hunk_inline()
                 end,
                 { desc = "Git preview hunk" }
             )
