@@ -30,7 +30,9 @@ This section looks at how you can split window in nvim.
 
 **Note.** You can pass the filename as an argument to commands `split` and `vsplit`. The correspoinding file will be opened in the new split.
 
-To **switch splits** hold `CTRL-w` and use the typical vim motions buttons to navigate among them.
+To **switch between splits**, press `Ctrl-w` and then use the standard Vim motion keys (`h`, `j`, `k`, `l`) to move between windows.
+
+Under the hood, `Ctrl-w` invokes Vim’s built-in `:wincmd` dispatcher. The following key (`h`, `j`, `k`, or `l`) is passed as an argument to `:wincmd`, which performs the corresponding window move (left, down, up, or right).
 
 To **close** some of the splits you have options:
 
