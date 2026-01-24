@@ -85,6 +85,20 @@ The filebrowser can be added to neovim using [neo-tree](https://github.com/nvim-
 To open the file browser use the command `:Neotree filesystem reveal left`. Or add the keymap `vim.keymap.set('n', '<C-b>', ":Neotree filesystem reveal left<CR>", {})`.
 
 
+## Jumps
+
+Jumps are a movements between different part of a text, according to a certain rules.
+
+The jumps could be:
+
+- Move to line `:<number of the line>`.
+- Different lsp related movements: `grt`, `grr` and so on.
+- When search brings you to some line.
+
+Check the list of your jumps with the command `:jumps`.
+
+You can go to the previous jump by `<C-o>`, or to the next one by pressing `<C-i>`.
+
 ## Search and replace
 
 To **search** in vim just type `/<symbols combo to search>`. As you type, it will move you to the first occurrence below the cursor. It will also highlight all other instances of the search pattern. After pressing `Enter`, the cursor will move to the closest match below. You can move to the next match by pressing `n` and to the previous match by pressing `N`.
