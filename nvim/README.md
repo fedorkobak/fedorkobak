@@ -49,6 +49,8 @@ To change size of the split use:
 
 Neovim supports the lsp features check the [documentaion](https://neovim.io/doc/user/lsp.html).
 
+To restart the LSP use command `:LspRestart`.
+
 Some important commands:
 - [`vim.lsp.enable`](https://neovim.io/doc/user/lsp.html#vim.lsp.enable()) enables given lsp server. 
 - [`vim.lsp.buf.definition`](https://neovim.io/doc/user/lsp.html#vim.lsp.buf.definition()) go to the definition of the given object (`gd` in this configuration is mapped for this command).
