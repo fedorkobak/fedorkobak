@@ -68,4 +68,33 @@ return {
             )
         end,
     },
+    {
+        "mfussenegger/nvim-dap",
+        config = function()
+            local dap = require("dap")
+
+            dap.adapters.python = {
+                type = "executable",
+                command = "python",
+                args = { "-m", "debugpy.adapter" },
+            }
+
+            dap.configurations.python = {{
+                type = "python",
+                request = "launch",
+                name = "Launch file",
+                program = "${file}",
+                console = "integratedTerminal",
+            },}
+
+            vim.keymap.set("n", "<F5>", dap.continue)
+            vim.keymap.set("n", "<F10>", dap.step_over)
+            vim.keymap.set("n", "<F11>", dap.step_into)
+            vim.keymap.set("n", "<F12>", dap.step_out)
+ 
+            vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
+            vim.keymap.set("n", "<leader>dr", dap.repl.open)
+
+        end,
+    }
 }
