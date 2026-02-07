@@ -170,3 +170,5 @@ This configuration uses:
 - `<F10>, <F11>, <F12>`: step over, step into and step out respectively.
 - `<leader>b` to set the break point.
 - `<leader>dr` opens the dap window, where you can type the variables whose values you want to inspect.
+
+**Note.** The [`debugpy`](https://github.com/microsoft/debugpy) have to be installed in the environment to use dap.
