@@ -21,6 +21,24 @@ Some basic configuration options:
 - To start typing enter the edit mode, as usualy using `i`.
 - To return to normal mode use `<C-\>,<C-n>` by default.
 
+## Shortcuts
+
+You are supposed to configure the shortcuts for the nvim editor.
+
+Do this with lua function command:
+
+```lua
+vim.keymap.set(mode, shortcut, command)
+```
+
+Where:
+
+- `mode`: modes where the shortcut would be available (`n`, `e`, `v` etc.). 
+- `shortcut`: the shortcut you want to set up.
+- `command`: the command the shortcut will execute.
+
+**Note**. In shortcuts you can use the special `<leader>` key, which is the special key for shortcuts configured for this user. By default, the `<leader>` is equivalent to space.
+
 ## Splits
 
 This section looks at how you can split window in nvim.
