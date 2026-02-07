@@ -159,3 +159,14 @@ To escape a backslash itlself, use the `\\` combination before it. So, to replac
 ```
 
 To enter to the search mode for the selected text in the visual mode, press `*` (`<Shirt-8>` key).
+
+## Debugger
+
+The way to use debugger with neovim is by using [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) plugin.
+
+This configuration uses:
+
+- `<F5>` to start debugger/continue execution.
+- `<F10>, <F11>, <F12>`: step over, step into and step out respectively.
+- `<leader>b` to set the break point.
+- `<leader>dr` opens the dap window, where you can type the variables whose values you want to inspect.
