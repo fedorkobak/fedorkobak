@@ -79,13 +79,23 @@ return {
                 args = { "-m", "debugpy.adapter" },
             }
 
-            dap.configurations.python = {{
-                type = "python",
-                request = "launch",
-                name = "Launch file",
-                program = "${file}",
-                console = "integratedTerminal",
-            },}
+            dap.configurations.python = {
+                {
+                    type = "python",
+                    request = "launch",
+                    name = "Launch file",
+                    program = "${file}",
+                    console = "integratedTerminal",
+                },
+                {
+                    type = "python",
+                    request = "launch",
+                    name = "unittest",
+                    module = "unittest",
+                    args = { "${file}" },
+                    console = "integratedTerminal",
+                },
+            }
 
             vim.keymap.set("n", "<leader>dc", dap.continue)
             vim.keymap.set("n", "<leader>dn", dap.step_over)
