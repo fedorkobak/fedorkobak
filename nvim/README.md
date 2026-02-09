@@ -166,8 +166,7 @@ The way to use debugger with neovim is by using [`nvim-dap`](https://github.com/
 
 This configuration uses:
 
-- `<F5>` to start debugger/continue execution.
-- `<leader>dc, <leader>di, <leader>do`: step over, step into and step out respectively.
+- `<leader>dc`, `<leader>dn`, `<leader>di`, `<leader>do`: continue, step over, step into and step out respectively.
 - `<leader>b` to set the break point.
 - `<leader>dr` opens the dap window, where you can type the variables whose values you want to inspect.
 
