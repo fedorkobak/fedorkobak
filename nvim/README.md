@@ -21,6 +21,12 @@ Some basic configuration options:
 - To start typing enter the edit mode, as usualy using `i`.
 - To return to normal mode use `<C-\>,<C-n>` by default.
 
+**Run lua code** from the nvim command using `lua` at the beggining. For example:
+
+```lua
+lua print("hello world")
+```
+
 ## Shortcuts
 
 You are supposed to configure the shortcuts for the nvim editor.
