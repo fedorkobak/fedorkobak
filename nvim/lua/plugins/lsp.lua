@@ -12,5 +12,17 @@ return {
             vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 		end,
 	},
+    {
+        "SmiteshP/nvim-navic",
+        config = function()
+            local navic = require("nvim-navic")
+            vim.lsp.config('pyright', {
+                on_attach = function(client, bufnr)
+                    navic.attach(client, bufnr)
+                end
+            })
+            vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+        end,
+    },
 }
 

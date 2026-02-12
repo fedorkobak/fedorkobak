@@ -106,5 +106,5 @@ return {
             vim.keymap.set("n", "<leader>dr", dap.repl.open)
 
         end,
-    }
+    },
 }
