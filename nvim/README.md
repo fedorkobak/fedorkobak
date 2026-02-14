@@ -43,6 +43,18 @@ Where:
 - `shortcut`: the shortcut you want to set up.
 - `command`: the command the shortcut will execute.
 
+**Special keys** are shortcuts that are usually wrapped in `<>` brackets. The following table shows the denotations for common keys used in key combinations.
+
+| Key          | Notation        |
+| ------------ | --------------- |
+| Enter        | `<CR>`          |
+| Escape       | `<Esc>`         |
+| Tab          | `<Tab>`         |
+| Backspace    | `<BS>`          |
+| Space        | `<Space>`       |
+| Leader key   | `<leader>`      |
+| Local leader | `<localleader>` |
+
 **Note**. In shortcuts you can use the special `<leader>` key, which is the special key for shortcuts configured for this user. By default, the `<leader>` is equivalent to space.
 
 ## Splits
