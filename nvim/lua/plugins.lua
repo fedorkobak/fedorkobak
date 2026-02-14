@@ -97,10 +97,10 @@ return {
                 },
             }
 
-            vim.keymap.set("n", "<leader>dc", dap.continue)
-            vim.keymap.set("n", "<leader>dn", dap.step_over)
-            vim.keymap.set("n", "<leader>di", dap.step_into)
-            vim.keymap.set("n", "<leader>do", dap.step_out)
+            vim.keymap.set("n", "<Up>", dap.continue)
+            vim.keymap.set("n", "<Down>", dap.step_over)
+            vim.keymap.set("n", "<Right>", dap.step_into)
+            vim.keymap.set("n", "<Left>", dap.step_out)
 
             vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
             vim.keymap.set("n", "<leader>dr", dap.repl.open)
