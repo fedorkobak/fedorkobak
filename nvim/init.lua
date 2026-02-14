@@ -1,10 +1,14 @@
-vim.cmd("set expandtab")
 vim.opt.clipboard = 'unnamedplus'
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+
+-- indentations settings
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+
 
 -- Terminal setup
 vim.keymap.set("t", "<C-w>h", "<C-\\><C-n><C-w>h")
