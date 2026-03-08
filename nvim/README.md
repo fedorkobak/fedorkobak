@@ -27,6 +27,18 @@ Some basic configuration options:
 lua print("hello world")
 ```
 
+**Buffers**
+
+In vim buffers are in-memory representations of files or content. Bufferes are:
+
+- Each file you've opened with nvim.
+- The terminal sessions.
+
+The following nvim commands are associated with buffers:
+
+- `:ls`: list available terminals.
+- `:buffer <number>` or `b <number>`: to open the corresponding buffer in the tab.
+
 ## Shortcuts
 
 You are supposed to configure the shortcuts for the nvim editor.
@@ -188,4 +200,6 @@ This configuration uses:
 - `<leader>b` to set the break point.
 - `<leader>dr` opens the dap window, where you can type the variables whose values you want to inspect.
 
-**Note.** The [`debugpy`](https://github.com/microsoft/debugpy) have to be installed in the environment to use dap.
+A terminal is automatically created for each debugging session. It stores messages from the processe's stdout. Use the `:ls` command to show all available buffers; the buffer created for the DAP will have the `[dap-terminal]` in it's name. Use the command `:b <number>` to open the corresponding buffer.
+
+**Note.** The [`debugpy`](https://github.com/microsoft/debugpy) have to be installerd in the environment to use dap.
