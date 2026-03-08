@@ -36,7 +36,7 @@ In vim buffers are in-memory representations of files or content. Bufferes are:
 
 The following nvim commands are associated with buffers:
 
-- `:ls`: list available terminals.
+- `:ls`: list available buffers.
 - `:buffer <number>` or `b <number>`: to open the corresponding buffer in the tab.
 
 ## Shortcuts
