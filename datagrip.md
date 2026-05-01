@@ -12,6 +12,9 @@ My keymap file:
 
 ```xml
 <keymap version="1" name="Fedor Kobak" parent="VSCode">
+  <action id="ActivateProjectToolWindow">
+    <keyboard-shortcut first-keystroke="ctrl b" />
+  </action>
   <action id="Console.Jdbc.Execute">
     <keyboard-shortcut first-keystroke="ctrl enter" />
   </action>
