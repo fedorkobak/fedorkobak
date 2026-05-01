@@ -64,3 +64,18 @@ The configuration for the terminal `terminal-font.xml`:
   </component>
 </application>
 ```
+
+## Editor
+
+The `editor.xml` is responsible for the prorties of the editor.
+
+```xml
+<application>
+  <component name="CodeInsightSettings">
+    <option name="REFORMAT_ON_PASTE" value="1" />
+  </component>
+  <component name="EditorSettings">
+    <option name="LINE_NUMERATION" value="HYBRID" />
+  </component>
+</application>
+```
