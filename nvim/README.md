@@ -19,7 +19,8 @@ Some basic configuration options:
 
 - To open terminal use `:terminal` command.
 - To start typing enter the edit mode, as usualy using `i`.
-- To return to normal mode use `<C-\>,<C-n>` by default.
+- To return to normal mode use `<C-\>,<C-n>` by default (Changed to `<C-w><Esc>` in my configuration).
+- This configuration uses `akinsho/toggleterm.nvim`
 
 **Run lua code** from the nvim command using `lua` at the beggining. For example:
 
