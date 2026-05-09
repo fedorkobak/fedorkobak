@@ -204,3 +204,12 @@ This configuration uses:
 A terminal is automatically created for each debugging session. It stores messages from the processe's stdout. Use the `:ls` command to show all available buffers; the buffer created for the DAP will have the `[dap-terminal]` in it's name. Use the command `:b <number>` to open the corresponding buffer.
 
 **Note.** The [`debugpy`](https://github.com/microsoft/debugpy) have to be installerd in the environment to use dap.
+
+## vimscrip configuration
+
+Sometimes it's useful to have the same configuration in vimscrip style rather than lua style. This is useful as some other tools contain facilities to build vim-like workflows and they sometimes the vim scirpt. So here is listed configuration for vim-script that I use:
+
+```vim
+set relativenumber
+set clipboard=unnamedplus
+```
