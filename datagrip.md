@@ -79,3 +79,20 @@ The `editor.xml` is responsible for the prorties of the editor.
   </component>
 </application>
 ```
+
+## Code style
+
+The code style configuration determines the editors behaviour when the formatting code. The `codestyles/Default.xml` file:
+
+```xml
+<code_scheme name="Default" version="173">
+  <SqlCodeStyleSettings version="7">
+    <option name="QUERY_SECTION_1ST_WORD_ALIGN" value="0" />
+    <option name="QUERY_EL_LINE" value="101" />
+    <option name="QUERY_TRUE_INDENT" value="false" />
+    <option name="QUERY_ALIGN_ELEMENTS" value="false" />
+    <option name="ROUTINE_ARG_OPENING" value="0" />
+    <option name="ROUTINE_ARG_WRAP" value="0" />
+  </SqlCodeStyleSettings>
+</code_scheme>
+```
