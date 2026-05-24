@@ -87,6 +87,8 @@ The `editor.xml` is responsible for the prorties of the editor.
 ```xml
 <application>
   <component name="CodeInsightSettings">
+    <option name="AUTOINSERT_PAIR_BRACKET" value="false" />
+    <option name="AUTOINSERT_PAIR_QUOTE" value="false" />
     <option name="REFORMAT_ON_PASTE" value="1" />
   </component>
   <component name="EditorSettings">
