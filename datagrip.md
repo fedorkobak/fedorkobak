@@ -133,3 +133,13 @@ To enable command that would format current file create the `tools/External tool
 You can then use the `autoformat` tool to format the current file.
 
 Specify the path to the `sqlfluff` executable in the `COMMAND` attribute. To check this in Linux, use the command `which sqlfluff` .
+
+To **disable the datagrip** formatter, use `codestyles/Default.xml` as following:
+
+```xml
+<code_scheme name="Default" version="173">
+  <SqlCodeStyleSettings version="7">
+    <option name="DISABLE_FORMATTING" value="true" />
+  </SqlCodeStyleSettings>
+</code_scheme>
+```
