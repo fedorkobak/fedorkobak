@@ -14,16 +14,31 @@ My keymap file:
 
 ```xml
 <keymap version="1" name="Fedor Kobak" parent="VSCode">
+
   <action id="ActivateProjectToolWindow">
     <keyboard-shortcut first-keystroke="ctrl b" />
   </action>
+
   <action id="Console.Jdbc.Execute">
     <keyboard-shortcut first-keystroke="ctrl enter" />
   </action>
+
   <action id="EditorStartNewLine" />
   <action id="GotoSymbol" />
   <action id="SplitChooser.Duplicate" />
   <action id="Terminal.SmartCommandExecution.Run" />
+
+  <!--
+    I don't like the basic formatter. The following configuration disables
+    the basic formatter and configures `shift alt f` to call an external
+    formatting tool. This tool executes slqfluff `fix command` for the active file.
+  -->
+  <action id="ReformatCode" />
+  <action id="ShowReformatFileDialog" />
+  <action id="Tool_External Tools_autoformat">
+    <keyboard-shortcut first-keystroke="shift alt f" />
+  </action>
+
 </keymap>
 ```
 
@@ -96,3 +111,25 @@ The code style configuration determines the editors behaviour when the formattin
   </SqlCodeStyleSettings>
 </code_scheme>
 ```
+
+### SQLFluff
+
+The default formatter is not configurable enought. This section describes how to configure an SQLFluff support extension.
+
+To enable command that would format current file create the `tools/External tools.xml`:
+
+```xml
+<toolSet name="External Tools">
+  <tool name="autoformat" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="$USER_HOME$/.local/bin/sqlfluff" />
+      <option name="PARAMETERS" value="fix $FilePath$" />
+      <option name="WORKING_DIRECTORY" value="$FileDir$" />
+    </exec>
+  </tool>
+</toolSet>
+```
+
+You can then use the `autoformat` tool to format the current file.
+
+Specify the path to the `sqlfluff` executable in the `COMMAND` attribute. To check this in Linux, use the command `which sqlfluff` .
