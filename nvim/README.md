@@ -62,6 +62,20 @@ Vim's true power is its special text navigation system. Many popular code/text e
 
 Check the [chapter 2](https://neovim.io/doc/user/usr_02/#usr_02.txt) and [chapter3](https://neovim.io/doc/user/usr_03/#usr_03.txt) of the vim quick start to learn more about basic motions features.
 
+### Jumps
+
+Jumps are a movements between different part of a text, according to a certain rules.
+
+The jumps could be:
+
+- Move to line `:<number of the line>`.
+- Different lsp related movements: `grt`, `grr` and so on.
+- When search brings you to some line.
+
+Check the list of your jumps with the command `:jumps`.
+
+You can go to the previous jump by `<C-o>`, or to the next one by pressing `<C-i>`.
+
 ## Shortcuts
 
 You are supposed to configure the shortcuts for the nvim editor.
@@ -159,19 +173,6 @@ The filebrowser can be added to neovim using [neo-tree](https://github.com/nvim-
 To open the file browser use the command `:Neotree filesystem reveal left`. Or add the keymap `vim.keymap.set('n', '<C-b>', ":Neotree filesystem reveal left<CR>", {})`.
 
 
-## Jumps
-
-Jumps are a movements between different part of a text, according to a certain rules.
-
-The jumps could be:
-
-- Move to line `:<number of the line>`.
-- Different lsp related movements: `grt`, `grr` and so on.
-- When search brings you to some line.
-
-Check the list of your jumps with the command `:jumps`.
-
-You can go to the previous jump by `<C-o>`, or to the next one by pressing `<C-i>`.
 
 ## Search and replace
 
