@@ -15,12 +15,6 @@ Some basic configuration options:
 - `vim.opt.shiftwidth = 4`: amount of spaces to move the selected lines with `CTRL+</>`.
 - `vim.opt.tabstop = 4`: amount of spaces to insert when the TAB is pressed in edit mode.
 
-**Terminal**
-
-- To open terminal use `:terminal` command.
-- To start typing enter the edit mode, as usualy using `i`.
-- To return to normal mode use `<C-\>,<C-n>` by default (Changed to `<C-w><Esc>` in my configuration).
-- This configuration uses [`akinsho/toggleterm.nvim`](https://github.com/akinsho/toggleterm.nvim) plugin to manage terminal. Open the toggleterm with ```<C-`>``` command (which is for unknown reason is equivalent to the `<C-Space>`).
 
 **Run lua code** from the nvim command using `lua` at the beggining. For example:
 
@@ -40,10 +34,23 @@ The following nvim commands are associated with buffers:
 - `:ls`: list available buffers.
 - `:buffer <number>` or `b <number>`: to open the corresponding buffer in the tab.
 
-**Visual mode** the mode in which you can select some text. It supports following features:
+## Modes
+
+**Visual** the mode in which you can select some text. It supports following features:
 
 - **Blocked Visual Mode**: activate blocked visual mode with the capital letter `V` and you will be able to select individual columns rather than whole lines.
 - **Move inside selected**: if you need to select more on the other side of the selection, there is no need to recreate the visual block. Just move to the end with the `o` letter.
+
+**Terminal**
+
+- To open terminal use `:terminal` command.
+- To start typing enter the edit mode, as usualy using `i`.
+- To return to normal mode use `<C-\>,<C-n>` by default (Changed to `<C-w><Esc>` in my configuration).
+- This configuration uses [`akinsho/toggleterm.nvim`](https://github.com/akinsho/toggleterm.nvim) plugin to manage terminal. Open the toggleterm with ```<C-`>``` command (which is for unknown reason is equivalent to the `<C-Space>`).
+
+**Replacing**
+
+Enter the replacing mode with the capital `R`. All characters you type, replace the characters under the cursor.
 
 ## Vim motions
 
