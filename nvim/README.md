@@ -40,6 +40,11 @@ The following nvim commands are associated with buffers:
 - `:ls`: list available buffers.
 - `:buffer <number>` or `b <number>`: to open the corresponding buffer in the tab.
 
+**Visual mode** the mode in which you can select some text. It supports following features:
+
+- **Blocked Visual Mode**: activate blocked visual mode with the capital letter `V` and you will be able to select individual columns rather than whole lines.
+- **Move inside selected**: if you need to select more on the other side of the selection, there is no need to recreate the visual block. Just move to the end with the `o` letter.
+
 ## Vim motions
 
 Vim's true power is its special text navigation system. Many popular code/text editors support extentions that emulate the Vim behaviour. While most are really obvious, some are more subtle and easy to overlook, os this section explores usefull tricks associated with using the Vim navigation system:
