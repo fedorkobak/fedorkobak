@@ -40,6 +40,15 @@ The following nvim commands are associated with buffers:
 - `:ls`: list available buffers.
 - `:buffer <number>` or `b <number>`: to open the corresponding buffer in the tab.
 
+## Vim motions
+
+Vim's true power is its special text navigation system. Many popular code/text editors support extentions that emulate the Vim behaviour. While most are really obvious, some are more subtle and easy to overlook, os this section explores usefull tricks associated with using the Vim navigation system:
+
+- **Paired brackets**: keep the cursor in the normal mode in the bracked the `%` (`<C-5>`) moves the cursor to the paired bracked.
+- **Repeating insert**: If you type the number before entering the insert mode, when you return to the normal mode, the text you're inserting will be repeated the specified number of times. It's a typical thing for me to do occasionally, but the usful case `80i=<ESC>` allows you to put 80 `=` in a row, which is usefull for building visual separators in the plain text.
+
+Check the [chapter 2](https://neovim.io/doc/user/usr_02/#usr_02.txt) of the vim quick start to learn more about basic motions features.
+
 ## Shortcuts
 
 You are supposed to configure the shortcuts for the nvim editor.
