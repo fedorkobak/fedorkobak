@@ -177,6 +177,20 @@ You can go to the previous jump by `<C-o>`, or to the next one by pressing `<C-i
 
 To **search** in vim just type `/<symbols combo to search>`. As you type, it will move you to the first occurrence below the cursor. It will also highlight all other instances of the search pattern. After pressing `Enter`, the cursor will move to the closest match below. You can move to the next match by pressing `n` and to the previous match by pressing `N`.
 
+Check the [search](https://neovim.io/doc/user/usr_03/#03.8) section of the vim tutorial.
+
+To specify in search that you need to look only **complete words** not wrapped by other next use `\<` and `\>` symbols.
+
+The idea is represented in the following exampler:
+
+```
+anthem
+for them  <- /\<the
+now the <- /\<the\>
+```
+
+The pattern specified after the `<-` symbol means that that search command will refer to the corresponding line.
+
 To **replace** values in vim, you have to use a command like:
 
 ```
@@ -210,6 +224,8 @@ To escape a backslash itlself, use the `\\` combination before it. So, to replac
 ```
 :s/\\\$/$/
 ```
+
+**Note**: the characters `.*[]^%/\?~$` have a special meaning, so all they have to be escaped in commands and searches.
 
 To enter to the search mode for the selected text in the visual mode, press `*` (`<Shirt-8>` key).
 
