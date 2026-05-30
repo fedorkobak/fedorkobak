@@ -104,6 +104,8 @@ Where:
 | Leader key   | `<leader>`      |
 | Local leader | `<localleader>` |
 
+**Modifier keys** The Ctrl and Alt keys are considered as modifyer keys, so they can only be used in combination with other keys. They must be refereneced as follows: `<C-{key}>` and `<A-{key}>`.
+
 **Note**. In shortcuts you can use the special `<leader>` key, which is the special key for shortcuts configured for this user. By default, the `<leader>` is equivalent to space.
 
 ## Splits
