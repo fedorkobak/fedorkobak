@@ -56,7 +56,7 @@ Vim's true power is its special text navigation system. Many popular code/text e
     - `gg` to the first line and `G` to the last.
 - **Relatively to screen** if you need to scroll past the visible area, there is an option to scroll relative to the number of lines visible in the working area:
     - `<PgUp>`, `<PgDown>` to scroll one screen.
-    - `C-d`, `C-u` to scroll half of the screen **d**own and **u**p respectively.
+    - `<C-d>`, `<C-u>` to scroll half of the screen **d**own and **u**p respectively.
 - **Scrooll** if you need to scrooll the visible text without changing the possition of the cursor:
     - `<C-y>`/`<C-e>` to scroll one line up/down.
 
