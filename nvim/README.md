@@ -43,6 +43,12 @@ The following nvim commands are associated with buffers:
 - **Blocked Visual Mode**: activate blocked visual mode with the capital letter `V` and you will be able to select individual columns rather than whole lines.
 - **Move inside selected**: if you need to select more on the other side of the selection, there is no need to recreate the visual block. Just move to the end with the `o` letter.
 
+**Visual blocked** is a variation of the visual mode that allows you to select a block of text without having to select each line up to the end. This approach provides some features associated with completing repetative oparations on the different lines:
+
+- Enter insert mode with `I` and text added in the first line would be added in all lines.
+- Entering insert mode with `A` works the same but insert new text at the right sight of the selected area. 
+- With `c` command the selected block would be removed, and the typed text would be substituted in the each line.
+
 **Terminal**
 
 - To open terminal use `:terminal` command.
