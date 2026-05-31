@@ -254,7 +254,7 @@ The filebrowser can be added to neovim using [neo-tree](https://github.com/nvim-
 
 To open the file browser use the command `:Neotree filesystem reveal left`. Or add the keymap `vim.keymap.set('n', '<C-b>', ":Neotree filesystem reveal left<CR>", {})`.
 
-## Search and replace
+## Search and substitute
 
 To **search** in vim just type `/<symbols combo to search>`. As you type, it will move you to the first occurrence below the cursor. It will also highlight all other instances of the search pattern. After pressing `Enter`, the cursor will move to the closest match below. You can move to the next match by pressing `n` and to the previous match by pressing `N`.
 
@@ -272,11 +272,17 @@ now the <- /\<the\>
 
 The pattern specified after the `<-` symbol means that that search command will refer to the corresponding line.
 
+To enter to the search mode for the selected text in the visual mode, press `*` (`<Shirt-8>` key).
+
+### Substitute
+
 To **replace** values in vim, you have to use a command like:
 
 ```
-:<scope>\<value to be replaced>\<value to replace>\<parameters>
+:[range]substitute/<value to be replaced>/<value to replace>/[flags]
 ```
+
+The `substitute` command by default have `s` as alias.
 
 The most usefull command are represented in the following table:
 
@@ -308,7 +314,12 @@ To escape a backslash itlself, use the `\\` combination before it. So, to replac
 
 **Note**: the characters `.*[]^%/\?~$` have a special meaning, so all they have to be escaped in commands and searches.
 
-To enter to the search mode for the selected text in the visual mode, press `*` (`<Shirt-8>` key).
+There are following usefull flags:
+
+- `g`: to apply the substitution globally. By default, it replaces only the first occurance.
+- `c`: to ask the confirmation for substitutions.
+
+Check the official description in the [Substitution](https://neovim.io/doc/user/usr_10/#10.2) section of the official documentation.
 
 ## Debugger
 
