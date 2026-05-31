@@ -144,6 +144,8 @@ To change size of the split use:
 - `CTRL-w + "+/-"`: to increase/decrease the size of the current section horizontally.
 - `CTRL-w + "</>"`: to increase/decrease the size of the current section vertically.
 
+Check the [Splitting windows](https://neovim.io/doc/user/usr_08/#usr_08.txt) of the vim manual.
+
 ## Registers
 
 Vim contains several clipboards, which are called 'registers'. They have names composed of one symbol. The default register is named `"`, and anything that is yanked, deleted or replaced appeared in this register.
