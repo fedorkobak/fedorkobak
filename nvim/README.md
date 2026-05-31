@@ -88,6 +88,16 @@ Check the list of your jumps with the command `:jumps`.
 
 You can go to the previous jump by `<C-o>`, or to the next one by pressing `<C-i>`.
 
+### Macros
+
+You can record the actions you did and apply in some other place.
+
+The following keys are responsble for building macroses:
+
+- Start recording a macro with `q{register}`. The `{register}` is a letter which is used to name this macro.
+- Finish recording with `q`.
+- Apply the macro with `@{register}` and vim will perform the same actions that you performed during the recording.
+
 ## Shortcuts
 
 You are supposed to configure the shortcuts for the nvim editor.
