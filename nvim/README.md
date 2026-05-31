@@ -143,6 +143,7 @@ To change size of the split use:
 
 - `CTRL-w + "+/-"`: to increase/decrease the size of the current section horizontally.
 - `CTRL-w + "</>"`: to increase/decrease the size of the current section vertically.
+- **Note** nvim supporst resizing with mouse, in post cases this is the most convenient option.
 
 Check the [Splitting windows](https://neovim.io/doc/user/usr_08/#usr_08.txt) of the vim manual.
 
