@@ -4,7 +4,9 @@ This folder contains my neovim configuration.
 
 This file contains useful links and tips on configuration and usage.
 
-Check the [user docs](https://neovim.io/doc/user/) in the official neovim site.
+Check:
+- The [user docs](https://neovim.io/doc/user/) in the official neovim site.
+- The [user manual](https://neovim.io/doc/user/usr_toc/#user-manual).
 
 The **configuration file** is `~/.config/nvim/init.lua`.
 
