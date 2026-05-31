@@ -98,6 +98,10 @@ The following keys are responsble for building macroses:
 - Finish recording with `q`.
 - Apply the macro with `@{register}` and vim will perform the same actions that you performed during the recording.
 
+**Note** that the registers are the same for yanking and macros. Macros are simply recorded into the regular register as a plain text. You can therefore pasate macros and return them to the register.
+
+You can add the commands to the existing macros by invoking the recording for capital register. For example to append actions to the register `a` use `qA` command.
+
 ## Shortcuts
 
 You are supposed to configure the shortcuts for the nvim editor.
