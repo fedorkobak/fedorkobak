@@ -104,6 +104,8 @@ The following keys are responsble for building macroses:
 
 You can add the commands to the existing macros by invoking the recording for capital register. For example to append actions to the register `a` use `qA` command.
 
+Check more in the [Record and playback commands](https://neovim.io/doc/user/usr_10/#10.1) section of the user manual.
+
 ## Shortcuts
 
 You are supposed to configure the shortcuts for the nvim editor.
