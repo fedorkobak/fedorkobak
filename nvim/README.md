@@ -144,6 +144,23 @@ To change size of the split use:
 - `CTRL-w + "+/-"`: to increase/decrease the size of the current section horizontally.
 - `CTRL-w + "</>"`: to increase/decrease the size of the current section vertically.
 
+## Registers
+
+Vim contains several clipboards, which are called 'registers'. They have names composed of one symbol. The default register is named `"`, and anything that is yanked, deleted or replaced appeared in this register.
+
+You can select the registry to use by entering a command that begins with the `"` symbol. Then specify the registry you want to use and the specific command you want to apply:
+
+For example:
+
+- `"1y` to yank the text to the register called `1`.
+- `"1p` to pase the text from the register called `1`.
+
+This would work with any command related with copying/pasting.
+
+Check the "Using registers" seciton of the [Copy text between files](https://neovim.io/doc/user/usr_07/#07.5) chapter of the vim manual.
+
+The [telescope](https://github.com/nvim-telescope/telescope.nvim) has a great feature for the registers. View your registers with the `:Telescope registers` command.
+
 ## LSP
 
 Neovim supports the lsp features check the [documentaion](https://neovim.io/doc/user/lsp.html).
