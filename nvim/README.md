@@ -116,11 +116,28 @@ Where:
 | Leader key   | `<leader>`      |
 | Local leader | `<localleader>` |
 
-**Modifier keys** The Ctrl and Alt keys are considered as modifyer keys, so they can only be used in combination with other keys. They must be refereneced as follows: `<C-{key}>` and `<A-{key}>`.
+**Modifier keys** The Ctrl, Alt and Shift keys are considered as modifyer keys, so they can only be used in combination with other keys. They must be refereneced as follows: `<C-{key}>`, `<A-{key}>`, `<S-{key}>`.
+
+| Key          | Notation        |
+| ------------ | --------------- |
+| Shift        | `<S+{key}>`     |
+| Ctrl         | `<C+{key}>`     |
+| Alt          | `<A+{key}>`     |
+
 
 **Note**. In shortcuts you can use the special `<leader>` key, which is the special key for shortcuts configured for this user. By default, the `<leader>` is equivalent to space.
 
-## Splits
+## Editing area
+
+This section considers the ways to organize your editing area:
+
+For this there are several options:
+
+- **Splits**: split the editing area so that you can keep different files in it.
+- **Tabs**: create tabs that keep other documents and switch between them. Use teh `:tab split` command to reopen the current file in a new tab. Use the classical shortcuts, `<C+S+PgUp>`, `<C+S+PgDown>` to switch between tabs.
+- **Folds**: hide some lines of the document, and keeps it as a special "folded line". Use `zf` in visual mode to fold the selected lines and `zo` on a folded line to unfold the text.
+
+### Splits
 
 This section looks at how you can split window in nvim.
 
