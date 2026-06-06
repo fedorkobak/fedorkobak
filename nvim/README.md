@@ -18,11 +18,6 @@ Some basic configuration options:
 - `vim.opt.tabstop = 4`: amount of spaces to insert when the TAB is pressed in edit mode.
 
 
-**Run lua code** from the nvim command using `lua` at the beggining. For example:
-
-```lua
-lua print("hello world")
-```
 
 ## Windows
 
@@ -218,6 +213,22 @@ This would work with any command related with copying/pasting.
 Check the "Using registers" seciton of the [Copy text between files](https://neovim.io/doc/user/usr_07/#07.5) chapter of the vim manual.
 
 The [telescope](https://github.com/nvim-telescope/telescope.nvim) has a great feature for the registers. View your registers with the `:Telescope registers` command.
+
+## Lua
+
+Lua is a programming language that allow to manipulate the nvim editor. In fact, all the extentions of nvim are written in this language.
+
+**Run lua code** from the nvim command using `lua` at the beggining. For example:
+
+```lua
+lua print("hello world")
+```
+
+The `vim.o.runtimepath` variable determines where nvim looks for executable scripts.
+
+```lua
+print(vim.o.runtimepath)
+```
 
 ## LSP
 
