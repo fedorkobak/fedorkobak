@@ -34,7 +34,7 @@ Nvim can handle multiple documents simualtaneosly. This is achieved through the 
 
 Check the [Windows](https://neovim.io/doc/user/windows/) section of the user manual.
 
-## Buffers
+### Buffers
 
 In vim buffers are in-memory representations of files or content. Bufferes are:
 
@@ -50,8 +50,13 @@ The following nvim commands are associated with buffers:
 
 This section looks at how you can split nvim working area into windows.
 
-- **Horizontal**: commands `split`, `sp`. Or `CTRL-w + s` short cut.
-- **Vertical**: commands `vsplit`, `vsp`. Or `CTRL-w + v` short cut.
+Shortcuts for manipulating windowns in nvim typically start with `CTRL-w`.
+
+**Split (create)** windows:
+
+- **Horizontal**: commands `split`, `sp`. Or `CTRL-w s` shortcut.
+- **Vertical**: commands `vsplit`, `vsp`. Or `CTRL-w v` shortcut.
+- **Close** the window with `:q` or `CTRL-w q` shortcut.
 
 **Note.** You can pass the filename as an argument to commands `split` and `vsplit`. The correspoinding file will be opened in the new split.
 
@@ -64,12 +69,13 @@ To **close** some of the splits you have options:
 - `close` (`CTRL-w + c`) to close current section.
 - `only` (`CTRL-w + o`) to leave just current section.
 
-
-To change size of the split use:
+To **change size** of the split use:
 
 - `CTRL-w + "+/-"`: to increase/decrease the size of the current section horizontally.
 - `CTRL-w + "</>"`: to increase/decrease the size of the current section vertically.
 - **Note** nvim supporst resizing with mouse, in post cases this is the most convenient option.
+
+The commands `CTRL-W H`, `CTRL-W J`, `CTRL-W K`, and `CTRL-W L` move the current window to the far left, bottom, top, or right of the window layout, respectively. They are disabled in my configuration because they ussually exhibit confusing and not revertable behaviour when CapsLock is activated.
 
 Check the [Splitting windows](https://neovim.io/doc/user/usr_08/#usr_08.txt) of the vim manual.
 

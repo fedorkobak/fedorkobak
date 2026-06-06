@@ -9,13 +9,17 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 
-
 -- Terminal setup
 vim.keymap.set("t", "<C-w>h", "<C-\\><C-n><C-w>h")
 vim.keymap.set("t", "<C-w>j", "<C-\\><C-n><C-w>j")
 vim.keymap.set("t", "<C-w>k", "<C-\\><C-n><C-w>k")
 vim.keymap.set("t", "<C-w>l", "<C-\\><C-n><C-w>l")
 vim.keymap.set("t", "<C-w><Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+
+vim.keymap.set("n", "<C-w>L", "<C-w>l", { remap = true })
+vim.keymap.set("n", "<C-w>H", "<C-w>h", { remap = true })
+vim.keymap.set("n", "<C-w>J", "<C-w>j", { remap = true })
+vim.keymap.set("n", "<C-w>K", "<C-w>k", { remap = true })
 
 -- Plugins
 require('config.lazy')
