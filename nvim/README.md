@@ -158,7 +158,9 @@ This section considers the ways to organize your editing area:
 For this there are several options:
 
 - **Splits**: split the editing area so that you can keep different files in it.
-- **Tabs**: create tabs that keep other documents and switch between them. Use teh `:tab split` command to reopen the current file in a new tab. Use the classical shortcuts, `<C+S+PgUp>`, `<C+S+PgDown>` to switch between tabs.
+- **Tabs**: create tabs that keep other documents and switch between them. Use teh `:tab split` command to reopen the current file in a new tab. To switch between tabs use: 
+    - The `<C+S+PgUp>`, `<C+S+PgDown>` shortcuts, but these uslually conflict with internal terminal tabs.
+    - The `<g+t>`, `<g+T>` default nvim combination for switching tabs.
 - **Folds**: hide some lines of the document, and keeps it as a special "folded line". Use `zf` in visual mode to fold the selected lines and `zo` on a folded line to unfold the text.
 
 ### Splits
