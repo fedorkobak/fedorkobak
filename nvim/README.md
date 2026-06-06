@@ -218,6 +218,8 @@ The [telescope](https://github.com/nvim-telescope/telescope.nvim) has a great fe
 
 Lua is a programming language that allow to manipulate the nvim editor. In fact, all the extentions of nvim are written in this language.
 
+Check the [lua-guide](https://neovim.io/doc/user/lua-guide/) for a basic reference on using lua within Neovim.
+
 **Run lua code** from the nvim command using `lua` at the beggining. For example:
 
 ```lua
