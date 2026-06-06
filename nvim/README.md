@@ -24,6 +24,16 @@ Some basic configuration options:
 lua print("hello world")
 ```
 
+## Windows
+
+Nvim can handle multiple documents simualtaneosly. This is achieved through the following features:
+
+- **Buffers**: the representation of the file in nvim.
+- **Window**: represents the buffer in interface.
+- **Tab**: the collection of the windows.
+
+Check the [Windows](https://neovim.io/doc/user/windows/) section of the user manual.
+
 **Buffers**
 
 In vim buffers are in-memory representations of files or content. Bufferes are:
