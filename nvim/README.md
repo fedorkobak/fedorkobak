@@ -222,6 +222,7 @@ The `vim.o.runtimepath` variable determines where nvim looks for executable scri
 
 ```lua
 print(vim.o.runtimepath)
+print(vim.o.runtimepath == vim.opt.rtp)
 ```
 
 ### Run
@@ -239,6 +240,40 @@ To run code selected in Visual mode, select the code, enter Command-line mode, a
 ```vimscript
 :'<,'>lua
 ```
+
+### API
+
+The `NVim` provides some API's in its Lua runtime. These are specific API's to manipulate with editor.
+
+The API is provided through `vim` table:
+
+```lua
+print(type(vim))
+print(vim)
+```
+
+The following table shows the lua subtables that are responsible for various aspects of the editor:
+
+| API              | Purpose                     |
+| ---------------- | --------------------------- |
+| `vim.o`          | Global options              |
+| `vim.bo`         | Buffer-local options        |
+| `vim.wo`         | Window-local options        |
+| `vim.opt`        | Option manipulation         |
+| `vim.g`          | Global Vim variables (`g:`) |
+| `vim.b`          | Buffer variables (`b:`)     |
+| `vim.w`          | Window variables (`w:`)     |
+| `vim.t`          | Tabpage variables (`t:`)    |
+| `vim.env`        | Environment variables       |
+| `vim.fn`         | Vimscript functions         |
+| `vim.api`        | Low-level Neovim API        |
+| `vim.keymap`     | Key mappings                |
+| `vim.cmd`        | Execute Ex commands         |
+| `vim.loop`       | LibUV interface             |
+| `vim.fs`         | Filesystem utilities        |
+| `vim.uv`         | Modern name for LibUV API   |
+| `vim.lsp`        | LSP client API              |
+| `vim.diagnostic` | Diagnostics API             |
 
 ## LSP
 
