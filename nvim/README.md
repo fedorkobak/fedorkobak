@@ -19,65 +19,9 @@ Some basic configuration options:
 
 ## Windows
 
-Nvim can handle multiple documents simualtaneosly. This is achieved through the following features:
+Nvim can handle multiple documents simultaneously with buffers, windows, and tabs.
 
-- **Buffers**: the representation of the file in nvim.
-- **Window**: represents the buffer in interface.
-- **Tab**: the collection of the windows.
-
-Check the [Windows](https://neovim.io/doc/user/windows/) section of the user manual.
-
-### Buffers
-
-In vim buffers are in-memory representations of files or content. Bufferes are:
-
-- Each file you've opened with nvim.
-- The terminal sessions.
-
-The following nvim commands are associated with buffers:
-
-- `:ls`: list available buffers.
-- `:buffer <number>` or `b <number>`: to open the corresponding buffer in the tab.
-
-### Windows
-
-This section looks at how you can split nvim working area into windows.
-
-Shortcuts for manipulating windowns in nvim typically start with `CTRL-w`.
-
-**Split (create)** windows:
-
-- **Horizontal**: commands `split`, `sp`. Or `CTRL-w s` shortcut.
-- **Vertical**: commands `vsplit`, `vsp`. Or `CTRL-w v` shortcut.
-- **Close** the window with `:q` or `CTRL-w q` shortcut.
-
-**Note.** You can pass the filename as an argument to commands `split` and `vsplit`. The correspoinding file will be opened in the new split.
-
-To **switch between splits**, press `Ctrl-w` and then use the standard Vim motion keys (`h`, `j`, `k`, `l`) to move between windows.
-
-Under the hood, `Ctrl-w` invokes Vim’s built-in `:wincmd` dispatcher. The following key (`h`, `j`, `k`, or `l`) is passed as an argument to `:wincmd`, which performs the corresponding window move (left, down, up, or right).
-
-To **close** some of the splits you have options:
-
-- `close` (`CTRL-w + c`) to close current section.
-- `only` (`CTRL-w + o`) to leave just current section.
-
-To **change size** of the split use:
-
-- `CTRL-w + "+/-"`: to increase/decrease the size of the current section horizontally.
-- `CTRL-w + "</>"`: to increase/decrease the size of the current section vertically.
-- **Note** nvim supporst resizing with mouse, in post cases this is the most convenient option.
-
-The commands `CTRL-W H`, `CTRL-W J`, `CTRL-W K`, and `CTRL-W L` move the current window to the far left, bottom, top, or right of the window layout, respectively. They are disabled in my configuration because they ussually exhibit confusing and not revertable behaviour when CapsLock is activated.
-
-Check the [Splitting windows](https://neovim.io/doc/user/usr_08/#usr_08.txt) of the vim manual.
-
-### Tabs
-
-Create tabs that keep other documents and switch between them. Use teh `:tab split` command to reopen the current file in a new tab. To switch between tabs use: 
-
-- The `<C+S+PgUp>`, `<C+S+PgDown>` shortcuts, but these uslually conflict with internal terminal tabs.
-- The `<g+t>`, `<g+T>` default nvim combination for switching tabs.
+See the dedicated [Windows guide](README/windows.md) for buffer commands, split management, resizing, and tab navigation.
 
 ## Modes
 
@@ -105,55 +49,9 @@ Enter the replacing mode with the capital `R`. All characters you type, replace 
 
 ## Vim motions
 
-Vim's true power is its special text navigation system. Many popular code/text editors support extentions that emulate the Vim behaviour. While most are really obvious, some are more subtle and easy to overlook, os this section explores usefull tricks associated with using the Vim navigation system:
+Vim motions are the main navigation system for moving through text efficiently.
 
-- **Paired brackets**: keep the cursor in the normal mode in the bracked the `%` (`<C-5>`) moves the cursor to the paired bracked.
-- **Repeating insert**: If you type the number before entering the insert mode, when you return to the normal mode, the text you're inserting will be repeated the specified number of times. It's a typical thing for me to do occasionally, but the usful case `80i=<ESC>` allows you to put 80 `=` in a row, which is usefull for building visual separators in the plain text.
-- **Exit file**: use `ZZ` (`shift + z, shift + z`) to save the file and automatically close it.
-- **Moving to a character**: with the `f` command, you can jump to the specified symbol on the current line. This is not really useful with regular text symbols, but programming and formal languages typically have some kind of special symbols. For example, jump from the begining to the end of the cycle definition in the line `for i in range(10): print(i)`, use `f:`.
-    - To go to symbol backwards use capital `F`.
-    - To go to the symbol that previous before the specified symbol use `t` and `T` respectively.
-- **Goto line**.
-    - Type number of the line + enter.
-    - Type `<number%> + <CR>`  to go to the specified procent of the lines.
-    - `gg` to the first line and `G` to the last.
-- **Relatively to screen** if you need to scroll past the visible area, there is an option to scroll relative to the number of lines visible in the working area:
-    - `<PgUp>`, `<PgDown>` to scroll one screen.
-    - `<C-d>`, `<C-u>` to scroll half of the screen **d**own and **u**p respectively.
-- **Scrooll** if you need to scrooll the visible text without changing the possition of the cursor:
-    - `<C-y>`/`<C-e>` to scroll one line up/down.
-
-Check the [chapter 2](https://neovim.io/doc/user/usr_02/#usr_02.txt) and [chapter3](https://neovim.io/doc/user/usr_03/#usr_03.txt) of the vim quick start to learn more about basic motions features.
-
-### Jumps
-
-Jumps are a movements between different part of a text, according to a certain rules.
-
-The jumps could be:
-
-- Move to line `:<number of the line>`.
-- Different lsp related movements: `grt`, `grr` and so on.
-- When search brings you to some line.
-
-Check the list of your jumps with the command `:jumps`.
-
-You can go to the previous jump by `<C-o>`, or to the next one by pressing `<C-i>`.
-
-### Macros
-
-You can record the actions you did and apply in some other place.
-
-The following keys are responsble for building macroses:
-
-- Start recording a macro with `q{register}`. The `{register}` is a letter which is used to name this macro.
-- Finish recording with `q`.
-- Apply the macro with `@{register}` and vim will perform the same actions that you performed during the recording.
-
-**Note** that the registers are the same for yanking and macros. Macros are simply recorded into the regular register as a plain text. You can therefore pasate macros and return them to the register.
-
-You can add the commands to the existing macros by invoking the recording for capital register. For example to append actions to the register `a` use `qA` command.
-
-Check more in the [Record and playback commands](https://neovim.io/doc/user/usr_10/#10.1) section of the user manual.
+See the dedicated [Vim motions guide](README/vim-motions.md) for movement tricks, jumps, and macros.
 
 ## Shortcuts
 
@@ -194,7 +92,6 @@ Where:
 
 **Note**. In shortcuts you can use the special `<leader>` key, which is the special key for shortcuts configured for this user. By default, the `<leader>` is equivalent to space.
 
-
 ## Registers
 
 Vim contains several clipboards, which are called 'registers'. They have names composed of one symbol. The default register is named `"`, and anything that is yanked, deleted or replaced appeared in this register.
@@ -214,66 +111,9 @@ The [telescope](https://github.com/nvim-telescope/telescope.nvim) has a great fe
 
 ## Lua
 
-Lua is a programming language that allow to manipulate the nvim editor. In fact, all the extentions of nvim are written in this language.
+Lua is used to configure and extend Neovim through the `vim` runtime API.
 
-Check the [lua-guide](https://neovim.io/doc/user/lua-guide/) for a basic reference on using lua within Neovim.
-
-The `vim.o.runtimepath` variable determines where nvim looks for executable scripts.
-
-```lua
-print(vim.o.runtimepath)
-print(vim.o.runtimepath == vim.opt.rtp)
-```
-
-### Run
-
-There are several options for running code directly in nvim environment. This is extremely usefull when debugging of the nvim behaviour.
-
-To run a single line of code, use the following command:
-
-```lua
-:lua print("hello world")
-```
-
-To run code selected in Visual mode, select the code, enter Command-line mode, and add lua after the suggested `'<,'>` range. Command line would look like this:
-
-```vimscript
-:'<,'>lua
-```
-
-### API
-
-The `NVim` provides some API's in its Lua runtime. These are specific API's to manipulate with editor.
-
-The API is provided through `vim` table:
-
-```lua
-print(type(vim))
-print(vim)
-```
-
-The following table shows the lua subtables that are responsible for various aspects of the editor:
-
-| API              | Purpose                     |
-| ---------------- | --------------------------- |
-| `vim.o`          | Global options              |
-| `vim.bo`         | Buffer-local options        |
-| `vim.wo`         | Window-local options        |
-| `vim.opt`        | Option manipulation         |
-| `vim.g`          | Global Vim variables (`g:`) |
-| `vim.b`          | Buffer variables (`b:`)     |
-| `vim.w`          | Window variables (`w:`)     |
-| `vim.t`          | Tabpage variables (`t:`)    |
-| `vim.env`        | Environment variables       |
-| `vim.fn`         | Vimscript functions         |
-| `vim.api`        | Low-level Neovim API        |
-| `vim.keymap`     | Key mappings                |
-| `vim.cmd`        | Execute Ex commands         |
-| `vim.loop`       | LibUV interface             |
-| `vim.fs`         | Filesystem utilities        |
-| `vim.uv`         | Modern name for LibUV API   |
-| `vim.lsp`        | LSP client API              |
-| `vim.diagnostic` | Diagnostics API             |
+See the dedicated [Lua guide](README/lua.md) for runtime path notes, running Lua snippets, and the Neovim API table.
 
 ## LSP
 
@@ -287,117 +127,19 @@ Some important commands:
 - [`vim.lsp.buf.type_definition`](https://neovim.io/doc/user/lsp.html#vim.lsp.buf.type_definition()) jumps to the definition of the type of the object under cursor (`grt` default shortcut).
 - [`vim.lsp.buf.references`](https://neovim.io/doc/user/lsp.html#vim.lsp.buf.references()) shows all the mentions of the symbol under cursor in the special window (`grr` default shortcut).
 - [`vim.lsp.buf.hover`](https://neovim.io/doc/user/lsp.html#vim.lsp.buf.hover()) shows a hover window that contains the information about the symbol under the cursor (`K` to show the hover, `KK` to enter the hover and navigate inside it like in regular window).
-- [`vim.diagnostics.open_float`](https://neovim.io/doc/user/diagnostic.html#vim.diagnostic.open_float()) opens the show diagnostics in the floating window. This means that if lsp or formatter marked some problem you can get additional inforamation in the floating window. The `<shit-e>` is mapped to this opperation in configuration. 
+- [`vim.diagnostics.open_float`](https://neovim.io/doc/user/diagnostic.html#vim.diagnostic.open_float()) opens the show diagnostics in the floating window. This means that if lsp or formatter marked some problem you can get additional inforamation in the floating window. The `<shit-e>` is mapped to this opperation in configuration.
 
 ## Plugins
 
-The `echo nvim_list_runtime_paths()` command lists where nvim looks for the `lua` folder to load `lua` code (in particular plugins) from.
+Plugins are managed with [Lazy](https://lazy.folke.io/) and provide most of the editor extensions used by this configuration.
 
-The plagins makes nvim experience really valuable. There are package managers, I'm using [Lazy](https://lazy.folke.io/).
-
-Check the [installation](https://lazy.folke.io/installation) guide.
-
-In the Lazy configuration file of the lazy (`~/.config/nvim/lua/lazy`), find the line that sets up lazy:
-
-```lua
-require("lazy").setup({
-  spec = {
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  },
-  install = { },
-  checker = { enabled = true },
-})
-```
-
-You have to list you plugins in the `spec` parameter.
-
-### Telescope
-
-Is a great plugin that allows to search for the files within the project.
-
-- `Telescope find_files` to look for the files in project. Mapped to `<C-p>`.
-- `Telescope regiesters` to view the contents of the registers.
-
-Open the searched result in a **new split or tab**:
-
-- `<C-x>` to open in a new horizontal split.
-- `<C-v>` to open in a new vertical split.
-- `<C-t>` to open in a new tab.
-
-### File browser
-
-The filebrowser can be added to neovim using [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim) plugin. To be able to see the icons of the files/folders in the files-tree, you have to specify the special font to your terminal I prefer [Lekton nerd font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Lekton.zip).
-
-**Note.** To install the font copy it's `.ttf` files to the `~/.local/share/fonts`.
-
-To open the file browser use the command `:Neotree filesystem reveal left`. Or add the keymap `vim.keymap.set('n', '<C-b>', ":Neotree filesystem reveal left<CR>", {})`.
+See the dedicated [Plugins guide](README/plugins.md) for Lazy setup, Telescope, and file browser notes.
 
 ## Search and substitute
 
-To **search** in vim just type `/<symbols combo to search>`. As you type, it will move you to the first occurrence below the cursor. It will also highlight all other instances of the search pattern. After pressing `Enter`, the cursor will move to the closest match below. You can move to the next match by pressing `n` and to the previous match by pressing `N`.
+Vim has built-in search and substitution commands for navigating matches and replacing text by pattern.
 
-Check the [search](https://neovim.io/doc/user/usr_03/#03.8) section of the vim tutorial.
-
-To specify in search that you need to look only **complete words** not wrapped by other next use `\<` and `\>` symbols.
-
-The idea is represented in the following example:
-
-```
-anthem
-for them  <- /\<the
-now the <- /\<the\>
-```
-
-The pattern specified after the `<-` symbol means that that search command will refer to the corresponding line.
-
-To enter to the search mode for the selected text in the visual mode, press `*` (`<Shirt-8>` key).
-
-### Substitute
-
-To **replace** values in vim, you have to use a command like:
-
-```
-:[range]substitute/<value to be replaced>/<value to replace>/[flags]
-```
-
-The `substitute` command by default have `s` as alias.
-
-The most usefull command are represented in the following table:
-
-| Command                         | Description                                                   |
-|--------------------------------|---------------------------------------------------------------|
-| `:s/foo/bar/`                  | Replace first occurrence of `foo` with `bar` on the current line |
-| `:s/foo/bar/g`                | Replace **all** occurrences of `foo` with `bar` on the current line |
-| `:%s/foo/bar/`                | Replace first occurrence of `foo` with `bar` in **all lines**     |
-| `:%s/foo/bar/g`              | Replace all occurrences of `foo` with `bar` in the whole file  |
-| `:%s/foo/bar/gc`             | Same as above, but **ask for confirmation** before each change |
-| `:n,m s/foo/bar/g`           | Replace `foo` with `bar` between lines `n` and `m`             |
-| `:'<,'> s/foo/bar/g`         | Replace `foo` with `bar` in the selected in visual mode section. VSCode automatically adds `'<,'>` to the command line when you type `:` in visual mode. |
-| `:%s/\<foo\>/bar/g`          | Replace whole word `foo` with `bar` globally                   |
-| `:%s/foo/bar/gI`             | Replace `foo` with `bar` globally, **case-insensitive**         |
-| `:%s/foo\c/bar/g`            | Also case-insensitive (with `\c` in pattern)                   |
-| `:%s/\Vfoo/bar/g`            | Use **very magic** mode (fewer escapes needed in pattern)      |
-
-Use backslash symbol to escape a symbol in a pattern. For example, to replace the pattern `/test` with `hello`, use the command:
-
-```
-:s/\/test/hello/
-```
-
-To escape a backslash itlself, use the `\\` combination before it. So, to replace the pattern `\$` with `$`:
-
-```
-:s/\\\$/$/
-```
-
-**Note**: the characters `.*[]^%/\?~$` have a special meaning, so all they have to be escaped in commands and searches.
-
-There are following usefull flags:
-
-- `g`: to apply the substitution globally. By default, it replaces only the first occurance.
-- `c`: to ask the confirmation for substitutions.
-
-Check the official description in the [Substitution](https://neovim.io/doc/user/usr_10/#10.2) section of the official documentation.
+See the dedicated [Search and substitute guide](README/search-and-substitute.md) for search syntax, word boundaries, replacement ranges, and substitution flags.
 
 ## Debugger
 
