@@ -17,8 +17,6 @@ Some basic configuration options:
 - `vim.opt.shiftwidth = 4`: amount of spaces to move the selected lines with `CTRL+</>`.
 - `vim.opt.tabstop = 4`: amount of spaces to insert when the TAB is pressed in edit mode.
 
-
-
 ## Windows
 
 Nvim can handle multiple documents simualtaneosly. This is achieved through the following features:
@@ -247,6 +245,8 @@ Some important commands:
 - [`vim.diagnostics.open_float`](https://neovim.io/doc/user/diagnostic.html#vim.diagnostic.open_float()) opens the show diagnostics in the floating window. This means that if lsp or formatter marked some problem you can get additional inforamation in the floating window. The `<shit-e>` is mapped to this opperation in configuration. 
 
 ## Plugins
+
+The `echo nvim_list_runtime_paths()` command lists where nvim looks for the `lua` folder to load `lua` code (in particular plugins) from.
 
 The plagins makes nvim experience really valuable. There are package managers, I'm using [Lazy](https://lazy.folke.io/).
 
