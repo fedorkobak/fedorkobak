@@ -218,16 +218,26 @@ Lua is a programming language that allow to manipulate the nvim editor. In fact,
 
 Check the [lua-guide](https://neovim.io/doc/user/lua-guide/) for a basic reference on using lua within Neovim.
 
-**Run lua code** from the nvim command using `lua` at the beggining. For example:
-
-```lua
-lua print("hello world")
-```
-
 The `vim.o.runtimepath` variable determines where nvim looks for executable scripts.
 
 ```lua
 print(vim.o.runtimepath)
+```
+
+### Run
+
+There are several options for running code directly in nvim environment. This is extremely usefull when debugging of the nvim behaviour.
+
+To run a single line of code, use the following command:
+
+```lua
+:lua print("hello world")
+```
+
+To run code selected in Visual mode, select the code, enter Command-line mode, and add lua after the suggested `'<,'>` range. Command line would look like this:
+
+```vimscript
+:'<,'>lua
 ```
 
 ## LSP
@@ -295,7 +305,7 @@ Check the [search](https://neovim.io/doc/user/usr_03/#03.8) section of the vim t
 
 To specify in search that you need to look only **complete words** not wrapped by other next use `\<` and `\>` symbols.
 
-The idea is represented in the following exampler:
+The idea is represented in the following example:
 
 ```
 anthem
