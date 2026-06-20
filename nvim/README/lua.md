@@ -6,11 +6,6 @@ Check the [lua-guide](https://neovim.io/doc/user/lua-guide/) for a basic referen
 
 The `vim.o.runtimepath` variable determines where nvim looks for executable scripts.
 
-```lua
-print(vim.o.runtimepath)
-print(vim.o.runtimepath == vim.opt.rtp)
-```
-
 ## Run
 
 There are several options for running code directly in nvim environment. This is extremely usefull when debugging of the nvim behaviour.
