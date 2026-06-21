@@ -31,6 +31,12 @@ The API is provided through `vim` table:
 print(type(vim))
 print(vim)
 ```
+<!-- nvim-lua-output:start -->
+```text
+table
+table: 0x79a67ffea218
+```
+<!-- nvim-lua-output:end -->
 
 The following table shows the lua subtables that are responsible for various aspects of the editor:
 

@@ -72,10 +72,6 @@ local function format_value(value)
         return value
     end
 
-    if type(value) == "table" then
-        return vim.inspect(value)
-    end
-
     return tostring(value)
 end
 
@@ -112,6 +108,9 @@ end
 ---@return boolean success Whether the code compiled and completed without an error.
 local function run(code, chunk_name)
     local output = {}
+    
+    -- Changing the behaviour of the print function in the compiled
+    -- code of the block
     local environment = setmetatable({
         print = function(...)
             local values = pack(...)
