@@ -103,6 +103,13 @@ local function compile(code, chunk_name, environment)
     return load(code, chunk_name, "t", environment)
 end
 
+---Compile and execute Lua code with access to Neovim's global environment.
+---Calls to print are captured as output lines, returned values are appended with
+---an "=>" prefix, and compilation or runtime errors are included in the output.
+---@param code string Lua source code to execute.
+---@param chunk_name string Name used to identify the chunk in error messages.
+---@return string[] output Captured output and execution results.
+---@return boolean success Whether the code compiled and completed without an error.
 local function run(code, chunk_name)
     local output = {}
     local environment = setmetatable({
