@@ -66,8 +66,13 @@ By using the `append`, `prepend`, `remove` methods of the subtables the configur
 For example the code:
 
 ```lua
-print(vim.o.rtp)
+print(vim.o.rtp:sub(1,50))
 ```
+<!-- nvim-lua-output:start -->
+```text
+/home/fedor/.config/nvim,/home/fedor/.local/share/
+```
+<!-- nvim-lua-output:end -->
 
 Just prints the runtime path. However, it is a string type, so to edit it you need to implement concatenation/search/remove... operations by yourself.
 
@@ -75,7 +80,12 @@ The `vim.opt.rtp` allows this to be done automatically. For example, the followi
 
 ```lua
 vim.opt.rtp:prepend("/tmp")
-print(vim.o.rtp)
+print(vim.o.rtp:sub(1, 50))
 ```
+<!-- nvim-lua-output:start -->
+```text
+/tmp,/home/fedor/.config/nvim,/home/fedor/.local/s
+```
+<!-- nvim-lua-output:end -->
 
 The corresponding change appears in the `vim.o.rtp` because they are different interfaces for the same parameter.

@@ -24,3 +24,6 @@ vim.keymap.set("n", "<C-w>K", "<C-w>k", { remap = true })
 -- Plugins
 require('config.lazy')
 
+-- Execute fenced Lua blocks in Markdown with :LuaBlock.
+lua_md_runner = require('nvim.lua.markdown_lua')
+vim.keymap.set("n", "<C-n>", lua_md_runner.execute_block)
