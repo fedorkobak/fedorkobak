@@ -57,35 +57,4 @@ The following table shows the lua subtables that are responsible for various asp
 
 The `vim.o.runtimepath`/`vim.o.rtp` variable determines where nvim looks for executable scripts.
 
-### `vim.opt`
-
-The `vim.opt` is designed to maniplate with options.
-
-By using the `append`, `prepend`, `remove` methods of the subtables the configuration can be changed esily that if to acccess to it directly using `vim.o` api.
-
-For example the code:
-
-```lua
-print(vim.o.rtp:sub(1,50))
-```
-<!-- nvim-lua-output:start -->
-```text
-/home/fedor/.config/nvim,/home/fedor/.local/share/
-```
-<!-- nvim-lua-output:end -->
-
-Just prints the runtime path. However, it is a string type, so to edit it you need to implement concatenation/search/remove... operations by yourself.
-
-The `vim.opt.rtp` allows this to be done automatically. For example, the following code adds the `/tmp` path at the beginning of the Lua runtime path:
-
-```lua
-vim.opt.rtp:prepend("/tmp")
-print(vim.o.rtp:sub(1, 50))
-```
-<!-- nvim-lua-output:start -->
-```text
-/tmp,/home/fedor/.config/nvim,/home/fedor/.local/s
-```
-<!-- nvim-lua-output:end -->
-
-The corresponding change appears in the `vim.o.rtp` because they are different interfaces for the same parameter.
+Check more in the corresponding [API](lua/API.md) page.
