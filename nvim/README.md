@@ -10,6 +10,8 @@ Check:
 
 The **configuration file** is `~/.config/nvim/init.lua`.
 
+**Note** use the `.venv` script to configure nvim to load its configuration from this folder for immediate experimentation.
+
 Some basic configuration options:
 
 - `vim.cmd("set expandtab")`: use spaces instead of tab.
