@@ -40,3 +40,11 @@ The filebrowser can be added to neovim using [neo-tree](https://github.com/nvim-
 **Note.** To install the font copy it's `.ttf` files to the `~/.local/share/fonts`.
 
 To open the file browser use the command `:Neotree filesystem reveal left`. Or add the keymap `vim.keymap.set('n', '<C-b>', ":Neotree filesystem reveal left<CR>", {})`.
+
+## Molten
+
+Is a plugin that implements jupyter client inside the nvim.
+
+Check [molten-nvim](https://github.com/benlubas/molten-nvim/tree/main) github repo.
+
+**Note** python runtime you're running molten in must have installed `pynvim` and `jupyter_client` packages.
