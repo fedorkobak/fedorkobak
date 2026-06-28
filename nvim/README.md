@@ -8,7 +8,16 @@ Check:
 - The [user docs](https://neovim.io/doc/user/) in the official neovim site.
 - The [user manual](https://neovim.io/doc/user/usr_toc/#user-manual).
 
-The **configuration file** is `~/.config/nvim/init.lua`.
+## Configuration
+
+The default **configuration file** is `~/.config/nvim/init.lua`. NVim executes content of this file every time it starts.
+
+The specific file is configurable:
+
+- The `$MYVIMRC` contains the information about the init files used for this session. NVim constructs it from the `"~/.config"` path and value of the `$NVIM_APPNAME` variable.
+- The `$NVIM_APPNAME` specifies which folder in system contains the configuration of the nvim.
+
+Reload configuration with `source $MYVIMRC`.
 
 **Note** use the `.venv` script to configure nvim to load its configuration from this folder for immediate experimentation.
 
